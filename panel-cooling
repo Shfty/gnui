@@ -44,31 +44,31 @@ tmux split-window -h
 
 # Open programs
 tmux select-pane -t 1
-tmux send-keys "cd /home/josh/projects/rust/gnui; ./chart-temps-coolant" C-m
+tmux send-keys "cd /mnt/projects/personal/rust/gnui; ./chart-temps-coolant" C-m
 
 tmux select-pane -t 2
-tmux send-keys "cd /home/josh/projects/rust/gnui; ./chart-pwms-coolant" C-m
+tmux send-keys "cd /mnt/projects/personal/rust/gnui; ./chart-pwms-coolant" C-m
 
 tmux select-pane -t 3
-tmux send-keys "cd /home/josh/projects/rust/gnui; ./chart-fans-coolant" C-m
+tmux send-keys "cd /mnt/projects/personal/rust/gnui; ./chart-fans-coolant" C-m
 
 tmux select-pane -t 4
-tmux send-keys "cd /home/josh/projects/rust/gnui; ./chart-temps-cpu" C-m
+tmux send-keys "cd /mnt/projects/personal/rust/gnui; ./chart-temps-cpu" C-m
 
 tmux select-pane -t 5
-tmux send-keys "cd /home/josh/projects/rust/gnui; ./chart-pwms-cpu" C-m
+tmux send-keys "cd /mnt/projects/personal/rust/gnui; ./chart-pwms-cpu" C-m
 
 tmux select-pane -t 6
-tmux send-keys "cd /home/josh/projects/rust/gnui; ./chart-fans-cpu" C-m
+tmux send-keys "cd /mnt/projects/personal/rust/gnui; ./chart-fans-cpu" C-m
 
 tmux select-pane -t 7
-tmux send-keys "cd /home/josh/projects/rust/gnui; ./chart-temps-gpu" C-m
+tmux send-keys "cd /mnt/projects/personal/rust/gnui; ./chart-temps-gpu" C-m
 
 tmux select-pane -t 8
-tmux send-keys "cd /home/josh/projects/rust/gnui; ./chart-pwms-gpu" C-m
+tmux send-keys "cd /mnt/projects/personal/rust/gnui; ./chart-pwms-gpu" C-m
 
 tmux select-pane -t 9
-tmux send-keys "cd /home/josh/projects/rust/gnui; ./chart-fans-gpu" C-m
+tmux send-keys "cd /mnt/projects/personal/rust/gnui; ./chart-fans-gpu" C-m
 
 # Finally attach to it
 tmux attach -t $SESSION_NAME
