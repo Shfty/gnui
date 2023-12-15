@@ -1,0 +1,8 @@
+#!/bin/sh
+
+PWM_SYSTEM=$(cat /tmp/fan1-target)
+PWM_GPU=$(cat /sys/class/hwmon/hwmon0/pwm1)
+echo -e "$PWM_SYSTEM\tSystem Fans: $PWM_SYSTEM"
+echo -e "$PWM_GPU\t           GPU: $PWM_GPU"
+
+echo -ne "\0"

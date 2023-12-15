@@ -1,0 +1,12 @@
+#!/bin/sh
+
+. ./conf-charts
+
+target/release/chart \
+    $@ \
+    --color white \
+    --x-axis-title "Time" \
+    --x-axis-bounds "0.0..200.0" \
+    --y-axis-title "PWM" \
+    --y-axis-bounds "40.0..110.0" \
+    <(while [[ true ]]; do ./pwms-coolant; sleep $CHART_TICK; done)

@@ -1,0 +1,12 @@
+#!/bin/sh
+
+. ./conf-charts
+
+target/release/chart \
+    $@ \
+    --color white \
+    --x-axis-title "Time" \
+    --x-axis-bounds "0.0..200.0" \
+    --y-axis-title "°C" \
+    --y-axis-bounds "29000.0..35000.0" \
+    <(while [[ true ]]; do ./temps-coolant; sleep $CHART_TICK; done)

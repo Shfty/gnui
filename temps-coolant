@@ -1,0 +1,6 @@
+#!/bin/sh
+
+COOLANT=$(cat /tmp/coolant-temp)
+echo -e "$COOLANT\tCoolant: $COOLANT"
+
+echo -ne "\0"

@@ -1,0 +1,6 @@
+#!/bin/sh
+
+FAN_1=$(cat /tmp/pump-speed)
+echo -e "$FAN_1\tPump: $FAN_1"
+
+echo -ne "\0"

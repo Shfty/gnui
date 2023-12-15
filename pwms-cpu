@@ -1,0 +1,12 @@
+#!/bin/sh
+
+PWM_FAN2=$(cat /tmp/fan2-target)
+PWM_FAN3=$(cat /tmp/fan3-target)
+PWM_FAN4=$(cat /tmp/fan4-target)
+PWM_FAN5=$(cat /tmp/fan5-target)
+echo -e "$PWM_FAN2\t Rear Fan: $PWM_FAN2"
+echo -e "$PWM_FAN3\t  Rad Top: $PWM_FAN3"
+echo -e "$PWM_FAN4\t  Rad Mid: $PWM_FAN4"
+echo -e "$PWM_FAN5\t  Rad Btm: $PWM_FAN5"
+
+echo -ne "\0"

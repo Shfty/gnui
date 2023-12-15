@@ -1,0 +1,10 @@
+#!/bin/sh
+
+target/release/chart \
+    $@ \
+    --color red green yellow blue magenta cyan \
+    --x-axis-title "Time" \
+    --x-axis-bounds "0.0..400.0" \
+    --y-axis-title "%" \
+    --y-axis-bounds "0.0..100.0" \
+    <(while [[ true ]]; do ./usage-cpu; done)

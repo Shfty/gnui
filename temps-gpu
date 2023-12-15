@@ -1,0 +1,10 @@
+#!/bin/sh
+
+GPU_MEM=$(cat /sys/class/hwmon/hwmon0/temp3_input)
+GPU_EDGE=$(cat /sys/class/hwmon/hwmon0/temp1_input)
+GPU_JUNCTION=$(cat /sys/class/hwmon/hwmon0/temp2_input)
+echo -e "$GPU_MEM\t  GPU Memory: $GPU_MEM"
+echo -e "$GPU_EDGE\t    GPU Edge: $GPU_EDGE"
+echo -e "$GPU_JUNCTION\tGPU Junction: $GPU_JUNCTION"
+
+echo -ne "\0"

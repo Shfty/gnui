@@ -1,0 +1,10 @@
+#!/bin/sh
+
+CPU_TCCD1=$(cat /sys/class/hwmon/hwmon2/temp3_input)
+CPU_TCCD2=$(cat /sys/class/hwmon/hwmon2/temp4_input)
+CPU_TCTL=$(cat /sys/class/hwmon/hwmon2/temp1_input)
+echo -e "$CPU_TCCD1\tCPU Tccd1: $CPU_TCCD1"
+echo -e "$CPU_TCCD2\tCPU Tccd2: $CPU_TCCD2"
+echo -e "$CPU_TCTL\t CPU Tctl: $CPU_TCTL"
+
+echo -ne "\0"

@@ -1,0 +1,12 @@
+#!/bin/sh
+
+. ./conf-charts
+
+target/release/chart \
+    $@ \
+    --color yellow red magenta blue \
+    --x-axis-title "Time" \
+    --x-axis-bounds "0.0..200.0" \
+    --y-axis-title "RPM" \
+    --y-axis-bounds "0.0..2400.0" \
+    <(while [[ true ]]; do ./fans-cpu; sleep $CHART_TICK; done)

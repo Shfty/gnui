@@ -1,0 +1,12 @@
+#!/bin/sh
+
+FAN_2=$(cat /tmp/fan2-speed)
+FAN_3=$(cat /tmp/fan3-speed)
+FAN_4=$(cat /tmp/fan4-speed)
+FAN_5=$(cat /tmp/fan5-speed)
+echo -e "$FAN_2\tRear Fan: $FAN_2"
+echo -e "$FAN_3\t Rad Top: $FAN_3"
+echo -e "$FAN_4\t Rad Mid: $FAN_4"
+echo -e "$FAN_5\t Rad Btm: $FAN_5"
+
+echo -ne "\0"

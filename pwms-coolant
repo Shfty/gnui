@@ -1,0 +1,6 @@
+#!/bin/sh
+
+PWM_PUMP=$(cat /tmp/pump-target)
+echo -e "$PWM_PUMP\tPump Target: $PWM_PUMP"
+
+echo -ne "\0"

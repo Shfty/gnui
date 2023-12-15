@@ -1,0 +1,74 @@
+#!/bin/zsh
+
+CWD=$(pwd)
+SESSION_NAME="panel-cooling"
+WINDOW_NAME="panel-cooling"
+
+# Kill the session if it exists
+tmux kill-session -t $SESSION_NAME
+
+# Create a new session, -d means detached itself
+set -- $(stty size) # $1 = rows $2 = columns
+tmux new-session -d -s $SESSION_NAME -x "$2" -y "$(($1 - 1))"
+
+# Main Window
+tmux rename-window $WINDOW_NAME
+
+# Disable status line
+tmux set status off
+
+# Disable border status line
+tmux set pane-border-status off
+
+# Layout
+tmux split-window -v -p 66
+tmux split-window -v
+
+tmux select-pane -t 1
+tmux split-window -h -p 66
+
+tmux select-pane -t 2
+tmux split-window -h
+
+tmux select-pane -t 4
+tmux split-window -h -p 66
+
+tmux select-pane -t 5
+tmux split-window -h
+
+tmux select-pane -t 7
+tmux split-window -h -p 66
+
+tmux select-pane -t 8
+tmux split-window -h
+
+# Open programs
+tmux select-pane -t 1
+tmux send-keys "cd /home/josh/projects/rust/gnui; ./chart-temps-coolant" C-m
+
+tmux select-pane -t 2
+tmux send-keys "cd /home/josh/projects/rust/gnui; ./chart-pwms-coolant" C-m
+
+tmux select-pane -t 3
+tmux send-keys "cd /home/josh/projects/rust/gnui; ./chart-fans-coolant" C-m
+
+tmux select-pane -t 4
+tmux send-keys "cd /home/josh/projects/rust/gnui; ./chart-temps-cpu" C-m
+
+tmux select-pane -t 5
+tmux send-keys "cd /home/josh/projects/rust/gnui; ./chart-pwms-cpu" C-m
+
+tmux select-pane -t 6
+tmux send-keys "cd /home/josh/projects/rust/gnui; ./chart-fans-cpu" C-m
+
+tmux select-pane -t 7
+tmux send-keys "cd /home/josh/projects/rust/gnui; ./chart-temps-gpu" C-m
+
+tmux select-pane -t 8
+tmux send-keys "cd /home/josh/projects/rust/gnui; ./chart-pwms-gpu" C-m
+
+tmux select-pane -t 9
+tmux send-keys "cd /home/josh/projects/rust/gnui; ./chart-fans-gpu" C-m
+
+# Finally attach to it
+tmux attach -t $SESSION_NAME

@@ -1,0 +1,12 @@
+[package]
+name = "gnui"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+crossterm = "0.23.0"
+tui = "0.17.0"
+crossbeam-channel = "0.5.2"
+anyhow = "1.0.56"
+
+clap = { version = "3.1.6", features = ["derive"] }

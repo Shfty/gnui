@@ -1,0 +1,8 @@
+#!/bin/sh
+
+SYSTEM_FANS=$(cat /tmp/fan1-speed)
+GPU_FAN=$(cat /sys/class/hwmon/hwmon0/fan1_input)
+echo -e "$SYSTEM_FANS\t  System Fans: $SYSTEM_FANS"
+echo -e "$GPU_FAN\t    GPU Fan: $GPU_FAN"
+
+echo -ne "\0"

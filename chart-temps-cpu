@@ -1,0 +1,12 @@
+#!/bin/sh
+
+. ./conf-charts
+
+target/release/chart \
+    $@ \
+    --color magenta red  yellow\
+    --x-axis-title "Time" \
+    --x-axis-bounds "0.0..200.0" \
+    --y-axis-title "°C" \
+    --y-axis-bounds "30000.0..100000.0" \
+    <(while [[ true ]]; do ./temps-cpu; sleep $CHART_TICK; done)

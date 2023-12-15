@@ -1,0 +1,12 @@
+#!/bin/sh
+
+. ./conf-charts
+
+target/release/chart \
+    $@ \
+    --color cyan green\
+    --x-axis-title "Time" \
+    --x-axis-bounds "0.0..200.0" \
+    --y-axis-title "PWM" \
+    --y-axis-bounds "0.0..255.0" \
+    <(while [[ true ]]; do ./pwms-gpu; sleep $CHART_TICK; done)
